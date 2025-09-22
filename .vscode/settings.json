@@ -1,0 +1,10 @@
+{
+  "code-runner.clearPreviousOutput": true,
+  "code-runner.executorMap": {
+    "typescript": "npx tsx"
+  },
+
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSave": true,
+  "editor.tabSize": 2
+}
