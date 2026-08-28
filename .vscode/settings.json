@@ -1,7 +1,11 @@
 {
   "code-runner.clearPreviousOutput": true,
+  "code-runner.runInTerminal": true,
   "code-runner.executorMap": {
     "typescript": "npx tsx"
+  },
+  "code-runner.executorMapByGlob": {
+    "*.test.ts": "npx vitest run $fullFileName"
   },
 
   "editor.defaultFormatter": "esbenp.prettier-vscode",
