@@ -18,7 +18,7 @@ export function twoSum(nums: number[], target: number): number[] {
   const checked = new Map<number, number>();
 
   for (let i = 0; i < nums.length; i++) {
-    const curNum = nums[i]!;
+    const curNum = nums[i];
     const anrNum = target - curNum;
 
     if (checked.has(anrNum)) {
