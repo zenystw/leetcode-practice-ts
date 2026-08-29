@@ -1,6 +1,9 @@
 import { describe, expect, it } from "vitest";
 import type { TestCase } from "../types";
-import { containsDuplicate } from "../../easy/217. Contains Duplicate";
+import {
+  containsDuplicate,
+  containsDuplicateByIterating,
+} from "../../easy/217. Contains Duplicate";
 
 type Solution = typeof containsDuplicate;
 
@@ -20,9 +23,19 @@ const cases = [
 ] satisfies TestCase<Solution>[];
 
 describe("217. Contains Duplicate", () => {
-  cases.forEach(({ input, output }) => {
-    it(`returns ${output} for nums ${JSON.stringify(input[0])}`, () => {
-      expect(containsDuplicate(...input)).toBe(output);
-    });
+  describe("containsDuplicate", () => {
+    runCases(containsDuplicate);
+  });
+
+  describe("containsDuplicateByIterating", () => {
+    runCases(containsDuplicateByIterating);
   });
 });
+
+function runCases(solution: Solution): void {
+  cases.forEach(({ input, output }) => {
+    it(`returns ${output} for nums ${JSON.stringify(input[0])}`, () => {
+      expect(solution(...input)).toBe(output);
+    });
+  });
+}

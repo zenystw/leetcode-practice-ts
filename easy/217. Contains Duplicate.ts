@@ -9,6 +9,10 @@
  * - `-10^9 <= nums[i] <= 10^9`
  */
 export function containsDuplicate(nums: number[]): boolean {
+  return new Set(nums).size !== nums.length;
+}
+
+export function containsDuplicateByIterating(nums: number[]): boolean {
   const seen = new Set<number>();
 
   for (const num of nums) {
