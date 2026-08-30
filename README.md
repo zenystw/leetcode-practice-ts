@@ -26,13 +26,14 @@ npm install
 ## Structure
 
 ```text
-src/      # LeetCode solutions, grouped by difficulty
+src/         # LeetCode solutions, grouped by difficulty
   easy/
   medium/
   hard/
-test/     # Vitest tests
+test/        # Vitest tests
   easy/
   medium/
   hard/
-  types.ts # Shared test types
+  helpers.ts # Shared test helpers
+  types.ts   # Shared test types
 ```
