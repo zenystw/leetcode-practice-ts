@@ -16,6 +16,11 @@
     "noImplicitReturns": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "strict": true
+    "strict": true,
+
+    /* Path Aliases */
+    "paths": {
+      "~/*": ["./src/*"]
+    }
   }
 }

@@ -4,7 +4,7 @@ import {
   isAnagram,
   isAnagramByCounting,
   isAnagramBySorting,
-} from "../../easy/242. Valid Anagram";
+} from "~/easy/242. Valid Anagram";
 
 type Solution = typeof isAnagram;
 

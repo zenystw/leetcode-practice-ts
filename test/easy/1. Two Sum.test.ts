@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 import type { TestCase } from "../types";
-import { twoSum } from "../../easy/1. Two Sum";
+import { twoSum } from "~/easy/1. Two Sum";
 
 type Solution = typeof twoSum;
 

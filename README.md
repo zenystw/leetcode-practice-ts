@@ -26,8 +26,13 @@ npm install
 ## Structure
 
 ```text
-easy/     # Easy solutions
-medium/   # Medium solutions
-hard/     # Hard solutions
-test/     # Vitest tests and shared test types
+src/      # LeetCode solutions, grouped by difficulty
+  easy/
+  medium/
+  hard/
+test/     # Vitest tests
+  easy/
+  medium/
+  hard/
+  types.ts # Shared test types
 ```

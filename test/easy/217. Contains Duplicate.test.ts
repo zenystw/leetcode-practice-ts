@@ -3,7 +3,7 @@ import type { TestCase } from "../types";
 import {
   containsDuplicate,
   containsDuplicateByIterating,
-} from "../../easy/217. Contains Duplicate";
+} from "~/easy/217. Contains Duplicate";
 
 type Solution = typeof containsDuplicate;
 

@@ -1,5 +1,6 @@
 {
   "name": "leetcode-practice-ts",
+  "type": "module",
   "license": "UNLICENSED",
   "devDependencies": {
     "@eslint/js": "^10.0.1",

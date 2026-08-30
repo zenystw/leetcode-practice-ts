@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 import type { TestCase } from "../types";
-import { longestCommonPrefix } from "../../easy/14. Longest Common Prefix";
+import { longestCommonPrefix } from "~/easy/14. Longest Common Prefix";
 
 type Solution = typeof longestCommonPrefix;
 

@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 import type { TestCase } from "../types";
-import { romanToInt } from "../../easy/13. Roman to Integer";
+import { romanToInt } from "~/easy/13. Roman to Integer";
 
 type Solution = typeof romanToInt;
 

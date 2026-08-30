@@ -3,7 +3,7 @@ import type { TestCase } from "../types";
 import {
   isPalindrome,
   isPalindromeByReversingNumber,
-} from "../../easy/9. Palindrome Number";
+} from "~/easy/9. Palindrome Number";
 
 type Solution = typeof isPalindrome;
 
