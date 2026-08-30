@@ -22,7 +22,7 @@ const cases = [
 describe("1. Two Sum", () => {
   cases.forEach(({ input, output }) => {
     it(`returns ${JSON.stringify(output)} for nums ${JSON.stringify(input[0])} and target ${input[1]}`, () => {
-      expect(twoSum(...input)).toEqual(output);
+      expect(new Set(twoSum(...input))).toEqual(new Set(output));
     });
   });
 });

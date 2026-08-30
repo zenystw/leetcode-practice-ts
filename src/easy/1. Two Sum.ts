@@ -24,7 +24,7 @@ export function twoSum(nums: number[], target: number): number[] {
     const anrNum = target - curNum;
 
     if (checked.has(anrNum)) {
-      return [checked.get(anrNum)!, i];
+      return [i, checked.get(anrNum)!];
     }
 
     checked.set(curNum, i);
