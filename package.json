@@ -2,6 +2,14 @@
   "name": "leetcode-practice-ts",
   "type": "module",
   "license": "UNLICENSED",
+  "scripts": {
+    "check": "npm run test && npm run typecheck && npm run lint && npm run format:check",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint .",
+    "format:check": "prettier --check .",
+    "format": "prettier --write ."
+  },
   "devDependencies": {
     "@eslint/js": "^10.0.1",
     "@types/node": "^24.6.0",

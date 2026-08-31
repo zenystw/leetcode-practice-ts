@@ -10,17 +10,44 @@ npm install
 
 ## Development
 
-- Run a solution: open a `.ts` solution file and use VS Code Code Runner.
-- Run a test: open a `*.test.ts` file and use VS Code Code Runner, or run:
+- Run a solution file: open a `.ts` solution file and use VS Code Code Runner.
+
+- Run a test file: open a `*.test.ts` file and use VS Code Code Runner.
+
+- Run all checks:
 
   ```bash
-  npx vitest run
+  npm run check
   ```
 
-- Lint the project:
+- Run all tests:
 
   ```bash
-  npx eslint .
+  npm run test
+  ```
+
+- Type-check with TypeScript:
+
+  ```bash
+  npm run typecheck
+  ```
+
+- Lint with ESLint:
+
+  ```bash
+  npm run lint
+  ```
+
+- Check formatting with Prettier:
+
+  ```bash
+  npm run format:check
+  ```
+
+- Format with Prettier:
+
+  ```bash
+  npm run format
   ```
 
 ## Structure
