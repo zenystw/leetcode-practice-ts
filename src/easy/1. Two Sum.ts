@@ -17,17 +17,17 @@
  * **Follow-up:** Can you come up with an algorithm that is less than `O(n^2)` time complexity?
  */
 export function twoSum(nums: number[], target: number): number[] {
-  const checked = new Map<number, number>();
+  const lastSeenIdxByNum = new Map<number, number>();
 
   for (let i = 0; i < nums.length; i++) {
     const curNum = nums[i];
     const anrNum = target - curNum;
 
-    if (checked.has(anrNum)) {
-      return [i, checked.get(anrNum)!];
+    if (lastSeenIdxByNum.has(anrNum)) {
+      return [i, lastSeenIdxByNum.get(anrNum)!];
     }
 
-    checked.set(curNum, i);
+    lastSeenIdxByNum.set(curNum, i);
   }
 
   return [];
