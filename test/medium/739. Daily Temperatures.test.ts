@@ -1,6 +1,9 @@
 import { describe, expect, it } from "vitest";
 import type { TestCase } from "../types";
-import { dailyTemperatures } from "~/medium/739. Daily Temperatures";
+import {
+  dailyTemperatures,
+  dailyTemperaturesWithPrecomputedGaps,
+} from "~/medium/739. Daily Temperatures";
 
 type Solution = typeof dailyTemperatures;
 
@@ -20,9 +23,19 @@ const cases = [
 ] satisfies TestCase<Solution>[];
 
 describe("739. Daily Temperatures", () => {
-  cases.forEach(({ input, output }) => {
-    it(`returns ${JSON.stringify(output)} for temperatures ${JSON.stringify(input[0])}`, () => {
-      expect(dailyTemperatures(...input)).toEqual(output);
-    });
+  describe("dailyTemperatures", () => {
+    runCases(dailyTemperatures);
+  });
+
+  describe("dailyTemperaturesWithPrecomputedGaps", () => {
+    runCases(dailyTemperaturesWithPrecomputedGaps);
   });
 });
+
+function runCases(solution: Solution): void {
+  cases.forEach(({ input, output }) => {
+    it(`returns ${JSON.stringify(output)} for temperatures ${JSON.stringify(input[0])}`, () => {
+      expect(solution(...input)).toEqual(output);
+    });
+  });
+}

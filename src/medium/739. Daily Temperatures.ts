@@ -10,6 +10,10 @@
  * - `30 <= temperatures[i] <= 100`
  */
 export function dailyTemperatures(temperatures: number[]): number[] {
+  if (temperatures.length === 1) {
+    return [0];
+  }
+
   const waitingIdxs: number[] = [];
   const daysToWait: number[] = Array.from(
     { length: temperatures.length },
@@ -27,6 +31,38 @@ export function dailyTemperatures(temperatures: number[]): number[] {
 
     waitingIdxs.push(curIdx);
   });
+
+  return daysToWait;
+}
+
+export function dailyTemperaturesWithPrecomputedGaps(
+  temperatures: number[]
+): number[] {
+  if (temperatures.length === 1) {
+    return [0];
+  }
+
+  const daysToWait: number[] = Array.from(
+    { length: temperatures.length },
+    () => 0
+  );
+
+  for (let curIdx = temperatures.length - 2; curIdx >= 0; curIdx--) {
+    let nextIdx = curIdx + 1;
+
+    while (nextIdx < temperatures.length) {
+      if (temperatures[nextIdx] > temperatures[curIdx]) {
+        daysToWait[curIdx] = nextIdx - curIdx;
+        break;
+      }
+
+      if (daysToWait[nextIdx] === 0) {
+        break;
+      }
+
+      nextIdx += daysToWait[nextIdx];
+    }
+  }
 
   return daysToWait;
 }
