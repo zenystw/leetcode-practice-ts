@@ -21,13 +21,13 @@ export function isPalindrome(x: number): boolean {
   } else if (x < 10) {
     return true;
   } else {
-    const chars = x.toString();
+    const str = x.toString();
 
     let leftIdx = 0;
-    let rightIdx = chars.length - 1;
+    let rightIdx = str.length - 1;
 
     while (rightIdx > leftIdx) {
-      if (chars[leftIdx] !== chars[rightIdx]) {
+      if (str[leftIdx] !== str[rightIdx]) {
         return false;
       }
 
@@ -45,14 +45,14 @@ export function isPalindromeByReversingNumber(x: number): boolean {
   } else if (x < 10) {
     return true;
   } else {
-    let revNum = 0;
-    let num = x;
+    let reversedX = 0;
+    let remainingX = x;
 
-    while (num !== 0) {
-      revNum = revNum * 10 + (num % 10);
-      num = Math.floor(num / 10);
+    while (remainingX !== 0) {
+      reversedX = reversedX * 10 + (remainingX % 10);
+      remainingX = Math.floor(remainingX / 10);
     }
 
-    return revNum === x;
+    return reversedX === x;
   }
 }
