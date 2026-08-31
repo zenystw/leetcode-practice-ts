@@ -26,7 +26,7 @@ export function isPalindrome(s: string): boolean {
     );
   };
 
-  while (rightIdx > leftIdx) {
+  while (leftIdx < rightIdx) {
     if (!isAlphanumeric(str[leftIdx])) {
       leftIdx++;
       continue;
@@ -61,7 +61,7 @@ export function isPalindromeSpaceOptimized(s: string): boolean {
     );
   };
 
-  while (rightIdx > leftIdx) {
+  while (leftIdx < rightIdx) {
     if (!isAlphanumeric(s[leftIdx])) {
       leftIdx++;
       continue;

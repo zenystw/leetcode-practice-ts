@@ -26,7 +26,7 @@ export function isPalindrome(x: number): boolean {
     let leftIdx = 0;
     let rightIdx = str.length - 1;
 
-    while (rightIdx > leftIdx) {
+    while (leftIdx < rightIdx) {
       if (str[leftIdx] !== str[rightIdx]) {
         return false;
       }

@@ -21,7 +21,7 @@ export function maxArea(height: number[]): number {
   let leftIdx = 0;
   let rightIdx = height.length - 1;
 
-  while (rightIdx > leftIdx) {
+  while (leftIdx < rightIdx) {
     const width = rightIdx - leftIdx;
     const leftHeight = height[leftIdx];
     const rightHeight = height[rightIdx];
