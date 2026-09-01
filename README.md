@@ -53,10 +53,11 @@ npm install
 ## Structure
 
 ```text
-src/         # LeetCode solutions, grouped by difficulty
+src/         # LeetCode solutions
   easy/
   medium/
   hard/
+  types/     # Shared solution types
 test/        # Vitest tests
   easy/
   medium/
