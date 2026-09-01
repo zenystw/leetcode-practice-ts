@@ -28,3 +28,31 @@ export function arrayToTree(arr: (number | null)[]): TreeNode | null {
 
   return root;
 }
+
+export function treeToArray(root: TreeNode | null): (number | null)[] {
+  if (root === null) {
+    return [];
+  }
+
+  const arr: (number | null)[] = [];
+  const queue: (TreeNode | null)[] = [root];
+
+  while (queue.length > 0) {
+    const node = queue.shift()!;
+
+    if (node === null) {
+      arr.push(null);
+      continue;
+    }
+
+    arr.push(node.val);
+    queue.push(node.left);
+    queue.push(node.right);
+  }
+
+  while (arr[arr.length - 1] === null) {
+    arr.pop();
+  }
+
+  return arr;
+}

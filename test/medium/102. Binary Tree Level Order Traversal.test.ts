@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 import type { TestCase } from "../types";
-import { arrayToTree } from "../helpers/binary-tree";
+import { arrayToTree, treeToArray } from "../helpers/binary-tree";
 import {
   levelOrder,
   levelOrderTimeOptimized,
@@ -35,7 +35,9 @@ describe("102. Binary Tree Level Order Traversal", () => {
 
 function runCases(solution: Solution): void {
   cases.forEach(({ input, output }) => {
-    it(`returns ${JSON.stringify(output)}`, () => {
+    it(`returns ${JSON.stringify(output)} for root ${JSON.stringify(
+      treeToArray(input[0])
+    )}`, () => {
       expect(solution(...input)).toEqual(output);
     });
   });
