@@ -2,7 +2,7 @@ import { describe, expect, it } from "vitest";
 import type { TestCase } from "../types";
 import {
   isAnagram,
-  isAnagramByCounting,
+  isAnagramWithFrequencyMap,
   isAnagramBySorting,
 } from "~/easy/242. Valid Anagram";
 
@@ -24,8 +24,8 @@ describe("242. Valid Anagram", () => {
     runCases(isAnagram);
   });
 
-  describe("isAnagramByCounting", () => {
-    runCases(isAnagramByCounting);
+  describe("isAnagramWithFrequencyMap", () => {
+    runCases(isAnagramWithFrequencyMap);
   });
 
   describe("isAnagramBySorting", () => {

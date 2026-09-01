@@ -1,6 +1,8 @@
 /**
  * @see https://leetcode.com/problems/roman-to-integer
  *
+ * ### Problem
+ *
  * Roman numerals are represented by seven different symbols: `I`, `V`, `X`, `L`, `C`, `D` and `M`.
  *
  * | Symbol | Value |
@@ -30,14 +32,21 @@
  *
  * Given a roman numeral, convert it to an integer.
  *
- * ***
  * **Constraints:**
  * - `1 <= s.length <= 15`
  * - `s` contains only the characters `('I', 'V', 'X', 'L', 'C', 'D', 'M')`.
  * - It is **guaranteed** that `s` is a valid roman numeral in the range `[1, 3999]`.
+ *
+ * ***
+ * ### Solution
+ *
+ * Looks up each Roman numeral's value, then scans from right to left to handle subtraction.
+ *
+ * - Time Complexity: O(n)
+ * - Space Complexity: O(1)
  */
 export function romanToInt(s: string): number {
-  const romanNums: Record<string, number> = {
+  const numByRomanSymbol: Record<string, number> = {
     I: 1,
     V: 5,
     X: 10,
@@ -50,8 +59,8 @@ export function romanToInt(s: string): number {
   let result = 0;
 
   for (let i = s.length - 1; i >= 0; i--) {
-    const curNum = romanNums[s[i]!]!;
-    const prevNum = i + 1 <= s.length - 1 ? romanNums[s[i + 1]!]! : 0;
+    const curNum = numByRomanSymbol[s[i]!]!;
+    const prevNum = i + 1 <= s.length - 1 ? numByRomanSymbol[s[i + 1]!]! : 0;
 
     if (i + 1 <= s.length - 1 && curNum < prevNum) {
       result -= curNum;

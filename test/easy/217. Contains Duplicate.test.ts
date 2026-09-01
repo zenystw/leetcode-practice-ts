@@ -2,7 +2,7 @@ import { describe, expect, it } from "vitest";
 import type { TestCase } from "../types";
 import {
   containsDuplicate,
-  containsDuplicateByIterating,
+  containsDuplicateWithEarlyExit,
 } from "~/easy/217. Contains Duplicate";
 
 type Solution = typeof containsDuplicate;
@@ -27,8 +27,8 @@ describe("217. Contains Duplicate", () => {
     runCases(containsDuplicate);
   });
 
-  describe("containsDuplicateByIterating", () => {
-    runCases(containsDuplicateByIterating);
+  describe("containsDuplicateWithEarlyExit", () => {
+    runCases(containsDuplicateWithEarlyExit);
   });
 });
 
