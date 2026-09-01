@@ -61,6 +61,6 @@ test/        # Vitest tests
   easy/
   medium/
   hard/
-  helpers.ts # Shared test helpers
+  helpers/   # Shared test helpers
   types.ts   # Shared test types
 ```

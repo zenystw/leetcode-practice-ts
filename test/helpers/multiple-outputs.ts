@@ -1,5 +1,5 @@
 import { isDeepStrictEqual } from "node:util";
-import type { TestCase } from "./types";
+import type { TestCase } from "../types";
 
 type GroupedCases<Solution> =
   TestCase<Solution> extends {

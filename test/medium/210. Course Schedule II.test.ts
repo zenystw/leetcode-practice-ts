@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
-import { groupCasesByInput } from "../helpers";
 import type { TestCase } from "../types";
+import { groupCasesByInput } from "../helpers/multiple-outputs";
 import { findOrder } from "~/medium/210. Course Schedule II";
 
 type Solution = typeof findOrder;
