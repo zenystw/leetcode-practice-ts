@@ -1,6 +1,9 @@
 import { describe, expect, it } from "vitest";
 import type { TestCase } from "../types";
-import { groupCasesByInput } from "../helpers/multiple-outputs";
+import {
+  getOutputDescription,
+  groupCasesByInput,
+} from "../helpers/multiple-outputs";
 import { findOrder } from "~/medium/210. Course Schedule II";
 
 type Solution = typeof findOrder;
@@ -42,7 +45,9 @@ const cases = [
 
 describe("210. Course Schedule II", () => {
   groupCasesByInput(cases).forEach(({ input, outputs }) => {
-    it(`returns a valid order for numCourses ${input[0]} and prerequisites ${JSON.stringify(input[1])}`, () => {
+    const outputDescription = getOutputDescription(outputs, "a valid order");
+
+    it(`returns ${outputDescription} for numCourses ${input[0]} and prerequisites ${JSON.stringify(input[1])}`, () => {
       expect(outputs).toContainEqual(findOrder(...input));
     });
   });
