@@ -8,10 +8,12 @@ export function arrayToTree(arr: (number | null)[]): TreeNode | null {
   const root = new TreeNode(arr[0]);
   const queue: TreeNode[] = [root];
 
+  let queueIdx = 0;
   let idx = 1;
 
-  while (queue.length > 0 && idx < arr.length) {
-    const node = queue.shift()!;
+  while (queueIdx < queue.length && idx < arr.length) {
+    const node = queue[queueIdx];
+    queueIdx++;
 
     const leftVal = arr[idx++];
     if (leftVal !== undefined && leftVal !== null) {
@@ -37,8 +39,11 @@ export function treeToArray(root: TreeNode | null): (number | null)[] {
   const arr: (number | null)[] = [];
   const queue: (TreeNode | null)[] = [root];
 
-  while (queue.length > 0) {
-    const node = queue.shift()!;
+  let queueIdx = 0;
+
+  while (queueIdx < queue.length) {
+    const node = queue[queueIdx];
+    queueIdx++;
 
     if (node === null) {
       arr.push(null);
@@ -55,4 +60,38 @@ export function treeToArray(root: TreeNode | null): (number | null)[] {
   }
 
   return arr;
+}
+
+/**
+ * Creates a deep copy of a binary tree.
+ *
+ * @param root Root node of the binary tree to clone, or `null`
+ * @returns Root node of the cloned binary tree, or `null` when `root` is `null`
+ */
+export function cloneTree(root: TreeNode | null): TreeNode | null {
+  if (root === null) {
+    return null;
+  }
+
+  const clonedRoot = new TreeNode(root.val);
+  const queue: [TreeNode, TreeNode][] = [[root, clonedRoot]];
+
+  let queueIdx = 0;
+
+  while (queueIdx < queue.length) {
+    const [sourceNode, clonedNode] = queue[queueIdx];
+    queueIdx++;
+
+    if (sourceNode.left) {
+      clonedNode.left = new TreeNode(sourceNode.left.val);
+      queue.push([sourceNode.left, clonedNode.left]);
+    }
+
+    if (sourceNode.right) {
+      clonedNode.right = new TreeNode(sourceNode.right.val);
+      queue.push([sourceNode.right, clonedNode.right]);
+    }
+  }
+
+  return clonedRoot;
 }

@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 import type { TestCase } from "../types";
-import { arrayToTree, treeToArray } from "../helpers/binary-tree";
+import { arrayToTree, cloneTree, treeToArray } from "../helpers/binary-tree";
 import { invertTree } from "~/easy/226. Invert Binary Tree";
 
 type Solution = typeof invertTree;
@@ -25,7 +25,7 @@ describe("226. Invert Binary Tree", () => {
     it(`returns ${JSON.stringify(treeToArray(output))} for root ${JSON.stringify(
       treeToArray(input[0])
     )}`, () => {
-      expect(invertTree(...input)).toEqual(output);
+      expect(invertTree(cloneTree(input[0]))).toEqual(output);
     });
   });
 });
