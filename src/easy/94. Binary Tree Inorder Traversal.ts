@@ -16,8 +16,10 @@ import { TreeNode } from "~/types/TreeNode";
  * ***
  * ### Solution
  *
- * - Time Complexity:
- * - Space Complexity:
+ * Depth-First Search: traverses the left subtree, visits the current node, then traverses the right subtree.
+ *
+ * - Time Complexity: O(n)
+ * - Space Complexity: O(n), including O(h) recursion stack
  */
 export function inorderTraversal(root: TreeNode | null): number[] {
   if (root === null) {
@@ -46,6 +48,10 @@ export function inorderTraversal(root: TreeNode | null): number[] {
  *
  * ### Follow-up Solution
  *
+ * @todo Add a description of this solution (e.g. `<algorithm>: <description>` or `<description>`).
+ *
+ * @todo Add time complexity.
  * - Time Complexity:
+ * @todo Add space complexity.
  * - Space Complexity:
  */

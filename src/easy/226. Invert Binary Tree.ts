@@ -39,8 +39,11 @@ export function invertTree(root: TreeNode | null): TreeNode | null {
  *
  * ### Alternative Solution
  *
- * Breadth-First Search
+ * @todo Complete the description of this solution.
+ * Breadth-First Search:
  *
+ * @todo Add time complexity.
  * - Time Complexity:
+ * @todo Add space complexity.
  * - Space Complexity:
  */

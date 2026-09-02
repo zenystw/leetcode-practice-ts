@@ -51,6 +51,9 @@ export function minSubArrayLen(target: number, nums: number[]): number {
  *
  * ### Follow-up Solution
  *
+ * @todo Add a description of this solution (e.g. `<algorithm>: <description>` or `<description>`).
+ *
  * - Time Complexity: O(n log(n))
+ * @todo Add space complexity.
  * - Space Complexity:
  */

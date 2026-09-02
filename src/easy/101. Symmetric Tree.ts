@@ -44,6 +44,10 @@ export function isSymmetric(root: TreeNode | null): boolean {
  *
  * ### Follow-up Solution
  *
+ * @todo Add a description of this solution (e.g. `<algorithm>: <description>` or `<description>`).
+ *
+ * @todo Add time complexity.
  * - Time Complexity:
+ * @todo Add space complexity.
  * - Space Complexity:
  */
