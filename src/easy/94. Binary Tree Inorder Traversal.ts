@@ -28,7 +28,7 @@ export function inorderTraversal(root: TreeNode | null): number[] {
 
   const result: number[] = [];
 
-  const traverse = (node: TreeNode | null) => {
+  const traverse = (node: TreeNode | null): void => {
     if (node === null) {
       return;
     }

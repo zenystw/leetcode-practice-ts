@@ -26,7 +26,7 @@ export function isPalindrome(s: string): boolean {
   let leftIdx = 0;
   let rightIdx = str.length - 1;
 
-  const isAlphanumeric = (char: string) => {
+  const isAlphanumeric = (char: string): boolean => {
     const charCode = char.charCodeAt(0);
     return (
       (charCode >= "A".charCodeAt(0) && charCode <= "Z".charCodeAt(0)) ||
@@ -69,7 +69,7 @@ export function isPalindromeSpaceOptimized(s: string): boolean {
   let leftIdx = 0;
   let rightIdx = s.length - 1;
 
-  const isAlphanumeric = (char: string) => {
+  const isAlphanumeric = (char: string): boolean => {
     const charCode = char.charCodeAt(0);
     return (
       (charCode >= "A".charCodeAt(0) && charCode <= "Z".charCodeAt(0)) ||
