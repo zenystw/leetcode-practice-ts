@@ -14,11 +14,13 @@ npm install
 
 - Run a test file: open a `*.test.ts` file and use VS Code Code Runner.
 
-- Run all checks:
+- Format files and run all checks:
 
   ```bash
   npm run check
   ```
+
+  This formats files first, then runs tests, type checking, and ESLint.
 
 - Run all tests:
 
@@ -32,16 +34,10 @@ npm install
   npm run typecheck
   ```
 
-- Lint with ESLint:
+- Check code with ESLint:
 
   ```bash
   npm run lint
-  ```
-
-- Check formatting with Prettier:
-
-  ```bash
-  npm run format:check
   ```
 
 - Format with Prettier:
