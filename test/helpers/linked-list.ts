@@ -34,6 +34,77 @@ export function listToArray(head: ListNode | null): number[] {
   return arr;
 }
 
+interface CyclicListObject {
+  arr: number[];
+  pos: number;
+}
+
+export function objectToCyclicList({
+  arr,
+  pos,
+}: CyclicListObject): ListNode | null {
+  const head = arrayToList(arr);
+
+  if (head === null || pos === -1) {
+    return head;
+  }
+
+  let curNode = head;
+  let cycleNode: ListNode | null = null;
+  let idx = 0;
+
+  while (curNode.next) {
+    if (idx === pos) {
+      cycleNode = curNode;
+    }
+
+    curNode = curNode.next;
+    idx++;
+  }
+
+  if (idx === pos) {
+    cycleNode = curNode;
+  }
+
+  curNode.next = cycleNode;
+
+  return head;
+}
+
+export function cyclicListToObject(head: ListNode | null): CyclicListObject {
+  if (head === null) {
+    return {
+      arr: [],
+      pos: -1,
+    };
+  }
+
+  const arr: number[] = [];
+  const nodeIdxMap = new Map<ListNode, number>();
+
+  let curNode: ListNode | null = head;
+
+  while (curNode) {
+    const pos = nodeIdxMap.get(curNode);
+
+    if (pos !== undefined) {
+      return {
+        arr,
+        pos,
+      };
+    }
+
+    nodeIdxMap.set(curNode, arr.length);
+    arr.push(curNode.val);
+    curNode = curNode.next;
+  }
+
+  return {
+    arr,
+    pos: -1,
+  };
+}
+
 /**
  * Creates a deep copy of a singly linked list.
  *
