@@ -45,3 +45,12 @@ export function minSubArrayLen(target: number, nums: number[]): number {
 
   return minLen === nums.length + 1 ? 0 : minLen;
 }
+
+/**
+ * @todo Implement this solution.
+ *
+ * ### Follow-up Solution
+ *
+ * - Time Complexity: O(n log(n))
+ * - Space Complexity:
+ */
